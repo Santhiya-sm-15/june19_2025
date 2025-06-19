@@ -1,0 +1,15 @@
+class Solution {
+    public int partitionArray(int[] nums, int k) {
+        Arrays.sort(nums);
+        int n=nums.length,start=nums[0],count=0;
+        for(int i=1;i<n;i++)
+        {
+            if(nums[i]-start>k)
+            {
+                count++;
+                start=nums[i];
+            }
+        }
+        return count+1;
+    }
+}
